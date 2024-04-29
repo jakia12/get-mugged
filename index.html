@@ -1,420 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" as="image" href="/blackpill.png" />
-    <link
-      rel="preload"
-      as="image"
-      href="https://img.icons8.com/color/100/twitterx--v1.png"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://img.icons8.com/color/100/telegram-app--v1.png"
-    />
-    <link rel="preload" as="image" href="/dextools.png" />
-    <link rel="preload" as="image" href="/bg.jpg" />
-    <link
-      rel="stylesheet"
-      href="/_next/static/css/13e1051c991cd8a9.css"
-      crossorigin=""
-      data-precedence="next"
-    />
-    <link
-      rel="preload"
-      as="script"
-      fetchPriority="low"
-      href="/_next/static/chunks/webpack-7cd29f9f1764155c.js"
-      crossorigin=""
-    />
-    <script
-      src="/_next/static/chunks/fd9d1056-7408c442169d5f2a.js"
-      async=""
-      crossorigin=""
-    ></script>
-    <script
-      src="/_next/static/chunks/472-0cbe0f7eef606a40.js"
-      async=""
-      crossorigin=""
-    ></script>
 
-    <link rel="shortcut icon" href="/pop.png" />
-    <title>Get Mogged</title>
-    <style type="text/css">
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 98%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 99999;
-        border-radius: 10px;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" as="image" href="/blackpill.png" />
+  <link rel="preload" as="image" href="https://img.icons8.com/color/100/twitterx--v1.png" />
+  <link rel="preload" as="image" href="https://img.icons8.com/color/100/telegram-app--v1.png" />
+  <link rel="preload" as="image" href="/dextools.png" />
+  <link rel="preload" as="image" href="/bg.jpg" />
+  <link rel="stylesheet" href="/_next/static/css/13e1051c991cd8a9.css" crossorigin="" data-precedence="next" />
+  <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-7cd29f9f1764155c.js"
+    crossorigin="" />
+  <script src="/_next/static/chunks/fd9d1056-7408c442169d5f2a.js" async="" crossorigin=""></script>
+  <script src="/_next/static/chunks/472-0cbe0f7eef606a40.js" async="" crossorigin=""></script>
 
+  <link rel="shortcut icon" href="/pop.png" />
+  <title>Get Mogged</title>
+  <style type="text/css">
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 99999;
+      border-radius: 10px;
+    }
+
+    .mod_content {
+      background-color: #131740;
+      width: 400px;
+      margin: 100px auto;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Hide the modal when not displayed */
+    .hidden {
+      display: none;
+    }
+
+    #yesButton {
+      padding: 8px 28px;
+      margin-right: 15px;
+      outline: none;
+      border: none;
+      background-color: #ff5cbb;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    #noButton {
+      padding: 8px 28px;
+      outline: none;
+      border: none;
+      background-color: #ff5cbb;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .faq_inner .card-header h4 button::before {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 768px) {
       .mod_content {
-        background-color: #131740;
-        width: 400px;
-        margin: 100px auto;
-        padding: 40px;
-        border-radius: 10px;
-        text-align: center;
+        width: 95%;
       }
 
-      /* Hide the modal when not displayed */
-      .hidden {
-        display: none;
+      .mob_space {
+        margin-top: 50px;
       }
+    }
+  </style>
+</head>
 
-      #yesButton {
-        padding: 8px 28px;
-        margin-right: 15px;
-        outline: none;
-        border: none;
-        background-color: #ff5cbb;
-        color: #fff;
-        border-radius: 30px;
-        cursor: pointer;
-      }
-      #noButton {
-        padding: 8px 28px;
-        outline: none;
-        border: none;
-        background-color: #ff5cbb;
-        color: #fff;
-        border-radius: 30px;
-        cursor: pointer;
-      }
-      .faq_inner .card-header h4 button::before {
-        display: none !important;
-      }
-
-      @media screen and (max-width: 768px) {
-        .mod_content {
-          width: 95%;
-        }
-        .mob_space {
-          margin-top: 50px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <audio src="/audio.mp3" loop="" muted=""></audio>
-    <main
-      class="relative w-screen min-h-screen h-fit flex flex-col bg-black overflow-x-hidden"
-    >
-      <div class="relative w-screen h-screen">
-        <div
-          class="absolute bottom-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] z-20 flex gap-2 mb-2"
-        >
-          <a href="https://twitter.com/Mogged_Sol"
-            ><img
-              width="100"
-              height="100"
-              src="https://img.icons8.com/color/100/twitterx--v1.png"
-              alt="twitterx--v1"
-              class="hover:scale-110 transition-all duration-300 ease-in-out" /></a
-          ><a href="https://t.me/moggedsol"
-            ><img
-              width="100"
-              height="100"
-              src="https://img.icons8.com/color/100/telegram-app--v1.png"
-              alt="telegram-app--v1"
-              class="hover:scale-110 transition-all duration-300 ease-in-out" /></a
-          ><span class="p-2"
-            ><img
-              width="72"
-              src="/dextools.png"
-              alt="dextools"
-              class="hover:scale-110 transition-all duration-300 ease-in-out"
-          /></span>
-        </div>
-        <img
-          src="/bg.jpg"
-          alt="background1"
-          class="w-screen h-screen absolute top-0 left-0"
-        />
-      </div>
-      <div class="w-screen h-screen relative bg-black overflow-hidden">
-        <img
-          src="/bg.jpg"
-          alt="background"
-          class="absolute w-screen h-screen top-0 left-0 opacity-80"
-        />
-        <div class="absolute w-screen h-screen overflow-hidden">
-          <div
-            class="w-screen h-screen flex flex-col gap-4 items-center justify-center"
-          >
-            <video
-              id="videoPlayer"
-              autoplay
-              controls
-              style="height: 500px; margin-top: 400px"
-            >
-              <source src="/loading.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div
-              class="w-fit h-fit p-6 border-4 text-base shadow-lg shadow-black bg-black bg-opacity-75 rounded-md text-white font-medium flex flex-col gap-2 z-20 max-w-[90%]"
-            >
-              <p>
-                Looksmaxxing is a set of self-improvement techniques and efforts
-                aimed at enhancing one&#x27;s physical appearance, often through
-                grooming, fitness, skincare, fashion, and cosmetic procedures.
-                The goal is to maximize one&#x27;s attractiveness and boost
-                self-confidence.
-              </p>
-              <p>
-                Once you have taken the black pill, you are a follower.
-                Followers of the &quot;black pill&quot; may adopt extreme
-                measures to improve their appearance, as they perceive it as the
-                only means of achieving romantic success.
-              </p>
-              <p>Will you join us? Remember, it is never over..</p>
-            </div>
-            <div
-              class="w-fit h-fit p-6 border-4 text-base shadow-lg shadow-black bg-black bg-opacity-75 rounded-md text-white font-medium flex flex-col gap-2 z-20 max-w-[90%]"
-            >
-              <h1 class="font-bold text-5xl text-center mb-2">DICTIONARY</h1>
-              <p>
-                <strong>Mog (or mogged)</strong> - internet slang term derived
-                from &quot;dominated.&quot; It&#x27;s used to describe a
-                situation where one person or thing is socially, physically, or
-                aesthetically outperformed by another, typically in the context
-                of physical appearance or status. For example, if someone is
-                &quot;mogged&quot; by a more attractive individual, it means
-                they are overshadowed or inferior in comparison. This term is
-                often used in online forums and communities to show who’s better
-                looking.
-              </p>
-              <p><strong>Mogger</strong> - Someone who mogs others easily.</p>
-              <p>
-                <strong>Dark Triad</strong> - refers to a set of personality
-                traits that some individuals believe can enhance one&#x27;s
-                attractiveness. It includes Machiavellianism (manipulation and
-                cunning), narcissism (excessive self-love), and psychopathy
-                (lack of empathy).
-              </p>
-              <p>
-                <strong>Light triad</strong> - typically refers to a set of
-                three positive facial attributes that are believed to enhance
-                one&#x27;s physical appearance. These attributes are usually
-                described as good eye area, strong jawline, and clear skin. They
-                are usually blue eyed, whiter, and have blonde hair.
-              </p>
-              <p>
-                <strong>PSL Scale</strong> - refers to the Pillars of Sexual
-                Attraction Scale. It&#x27;s a subjective rating system used by
-                some individuals to evaluate and improve their physical
-                attractiveness based on various traits, including facial
-                aesthetics, body proportions, and style. The scale can range
-                from 1 to 10, with higher scores indicating higher perceived
-                attractiveness.
-              </p>
-              <p>
-                <strong>It is so over</strong> - refers to someone who cannot be
-                saved, or someone that is very un-attractive.
-              </p>
-              <p>
-                <strong>Bone Smashing</strong> - using certain objects, such as
-                a hammer, to hit yourself with (mainly on the jawline) in order
-                to look more masculine by having a chiseled jawline.
-              </p>
-              <p>
-                <strong>Eye pulling</strong> - cosmetic techniques or procedures
-                aimed at enhancing the appearance of one&#x27;s eyes. This may
-                include eyelid surgery, makeup techniques, or even non-surgical
-                methods to make the eyes appear more attractive or youthful.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="w-screen h-screen relative bg-black overflow-hidden">
-        <img
-          src="/bg.jpg"
-          alt="background"
-          class="absolute w-screen h-screen top-0 left-0 opacity-80"
-        />
-        <div class="absolute w-screen h-screen overflow-hidden">
+<body>
+  <audio src="/audio.mp3" loop="" muted=""></audio>
+  <main class="relative w-screen min-h-screen h-fit flex flex-col bg-black overflow-x-hidden">
+    <div class="relative w-screen h-screen">
+      <div class="absolute bottom-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] z-20 flex gap-2 mb-2">
+        <a href="https://twitter.com/Mogged_Sol">
+          <img width="100" height="100"
+            src="https://img.icons8.com/color/100/twitterx--v1.png" alt="twitterx--v1"
+            class="hover:scale-110 transition-all duration-300 ease-in-out" />
+        </a>
+        <a href="https://t.me/moggedsol">
           <img
-            loading="lazy"
-            src="/meme8.jpg"
-            alt="meme1"
-            class="absolute top-6 left-4 rotate-6 w-[25%]"
-          /><img
-            loading="lazy"
-            src="/meme9.jpg"
-            alt="meme2"
-            class="absolute top-6 right-2 -rotate-12 w-[25%]"
-          /><img
-            loading="lazy"
-            src="/meme10.jpg"
-            alt="meme3"
-            class="absolute top-12 left-[36%] w-[30%]"
-          /><img
-            loading="lazy"
-            src="/meme11.jpg"
-            alt="meme4"
-            class="absolute bottom-8 left-4 rotate-12 w-[20%]"
-          /><img
-            loading="lazy"
-            src="/meme12.jpg"
-            alt="meme5"
-            class="absolute bottom-4 left-[50%] -rotate-12 w-[30%]"
-          /><img
-            loading="lazy"
-            src="/meme13.jpg"
-            alt="meme6"
-            class="absolute bottom-8 left-[25%] rotate-12 w-[20%]"
-          /><img
-            loading="lazy"
-            src="/meme14.jpg"
-            alt="meme7"
-            class="absolute bottom-0 right-8 w-[22%]"
-          />
-          <div class="w-screen h-screen flex items-center justify-center">
-            <div
-              class="w-fit h-fit p-8 border-4 shadow-lg shadow-black bg-black bg-opacity-75 rounded-md text-white font-medium text-lg flex flex-col gap-4 z-20 max-w-[80%]"
-            >
-              <p>
-                <strong>Ropemaxx</strong> - someone who should, basically, end
-                themselves as it is over for them.
-              </p>
-              <p>
-                <strong>Mewing</strong> - technique that involves maintaining
-                proper tongue posture, specifically pressing the tongue against
-                the roof of the mouth, to potentially enhance facial aesthetics
-                and correct orthodontic issues over time. It&#x27;s believed to
-                promote better jawline and facial structure.
-              </p>
-              <p>
-                <strong>“Just be confident bro”</strong>
-                <!-- -->- A term often used to give unattractive people more
-                hope.
-              </p>
-              <p>
-                <strong>Squintmaxxing</strong> - Squinting your eyes daily in
-                order to achieve the full look of hunter eyes.
-              </p>
-              <p>
-                <strong>In order to achieve PSL 9+:</strong>
-                <!-- -->Must have chiseled jawline
-              </p>
-              <p>6’2+</p>
-              <p>Non-receding Hairline.</p>
-              <p>Hunter Eyes</p>
-              <p>Facial Harmony</p>
-            </div>
+            width="100" height="100" src="https://img.icons8.com/color/100/telegram-app--v1.png" alt="telegram-app--v1"
+            class="hover:scale-110 transition-all duration-300 ease-in-out" />
+        </a>
+        <a href="buylink">
+          <img
+            width="100" height="100" src="./ray.png" alt="telegram-app--v1"
+            class="hover:scale-110 transition-all duration-300 ease-in-out" />
+        </a>
+            
+      </div>
+      <img src="/bg.jpg" alt="background1" class="w-screen h-screen absolute top-0 left-0" />
+    </div>
+    <div class="w-screen h-screen relative bg-black overflow-hidden">
+      <img src="/bg.jpg" alt="background" class="absolute w-screen h-screen top-0 left-0 opacity-80" />
+      <div class="absolute w-screen h-screen overflow-hidden">
+        <div class="w-screen h-screen flex flex-col gap-4 items-center justify-center">
+          <video id="videoPlayer" autoplay controls style="height: 500px; margin-top: 400px">
+            <source src="/loading.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div
+            class="w-fit h-fit p-6 border-4 text-base shadow-lg shadow-black bg-black bg-opacity-75 rounded-md text-white font-medium flex flex-col gap-2 z-20 max-w-[90%]">
+            <p>
+              Looksmaxxing is a set of self-improvement techniques and efforts
+              aimed at enhancing one&#x27;s physical appearance, often through
+              grooming, fitness, skincare, fashion, and cosmetic procedures.
+              The goal is to maximize one&#x27;s attractiveness and boost
+              self-confidence.
+            </p>
+            <p>
+              Once you have taken the black pill, you are a follower.
+              Followers of the &quot;black pill&quot; may adopt extreme
+              measures to improve their appearance, as they perceive it as the
+              only means of achieving romantic success.
+            </p>
+            <p>Will you join us? Remember, it is never over..</p>
+          </div>
+          <div
+            class="w-fit h-fit p-6 border-4 text-base shadow-lg shadow-black bg-black bg-opacity-75 rounded-md text-white font-medium flex flex-col gap-2 z-20 max-w-[90%]">
+            <h1 class="font-bold text-5xl text-center mb-2">DICTIONARY</h1>
+            <p>
+              <strong>Mog (or mogged)</strong> - internet slang term derived
+              from &quot;dominated.&quot; It&#x27;s used to describe a
+              situation where one person or thing is socially, physically, or
+              aesthetically outperformed by another, typically in the context
+              of physical appearance or status. For example, if someone is
+              &quot;mogged&quot; by a more attractive individual, it means
+              they are overshadowed or inferior in comparison. This term is
+              often used in online forums and communities to show who’s better
+              looking.
+            </p>
+            <p><strong>Mogger</strong> - Someone who mogs others easily.</p>
+            <p>
+              <strong>Dark Triad</strong> - refers to a set of personality
+              traits that some individuals believe can enhance one&#x27;s
+              attractiveness. It includes Machiavellianism (manipulation and
+              cunning), narcissism (excessive self-love), and psychopathy
+              (lack of empathy).
+            </p>
+            <p>
+              <strong>Light triad</strong> - typically refers to a set of
+              three positive facial attributes that are believed to enhance
+              one&#x27;s physical appearance. These attributes are usually
+              described as good eye area, strong jawline, and clear skin. They
+              are usually blue eyed, whiter, and have blonde hair.
+            </p>
+            <p>
+              <strong>PSL Scale</strong> - refers to the Pillars of Sexual
+              Attraction Scale. It&#x27;s a subjective rating system used by
+              some individuals to evaluate and improve their physical
+              attractiveness based on various traits, including facial
+              aesthetics, body proportions, and style. The scale can range
+              from 1 to 10, with higher scores indicating higher perceived
+              attractiveness.
+            </p>
+            <p>
+              <strong>It is so over</strong> - refers to someone who cannot be
+              saved, or someone that is very un-attractive.
+            </p>
+            <p>
+              <strong>Bone Smashing</strong> - using certain objects, such as
+              a hammer, to hit yourself with (mainly on the jawline) in order
+              to look more masculine by having a chiseled jawline.
+            </p>
+            <p>
+              <strong>Eye pulling</strong> - cosmetic techniques or procedures
+              aimed at enhancing the appearance of one&#x27;s eyes. This may
+              include eyelid surgery, makeup techniques, or even non-surgical
+              methods to make the eyes appear more attractive or youthful.
+            </p>
           </div>
         </div>
       </div>
-      <!-- modal section starts here -->
-      <!-- modal section -->
-      <div id="myModal" class="modal">
-        <div class="mod_content" style="background-color: #131740">
-          <p style="color: #fff; font-size: 17px">
-            Are you ready to Get-Mogged?
-          </p>
+    </div>
+    <div class="w-screen h-screen relative bg-black overflow-hidden">
+      <img src="/bg.jpg" alt="background" class="absolute w-screen h-screen top-0 left-0 opacity-80" />
+      <div class="absolute w-screen h-screen overflow-hidden">
+        <img loading="lazy" src="/meme8.jpg" alt="meme1" class="absolute top-6 left-4 rotate-6 w-[25%]" /><img
+          loading="lazy" src="/meme9.jpg" alt="meme2" class="absolute top-6 right-2 -rotate-12 w-[25%]" /><img
+          loading="lazy" src="/meme10.jpg" alt="meme3" class="absolute top-12 left-[36%] w-[30%]" /><img loading="lazy"
+          src="/meme11.jpg" alt="meme4" class="absolute bottom-8 left-4 rotate-12 w-[20%]" /><img loading="lazy"
+          src="/meme12.jpg" alt="meme5" class="absolute bottom-4 left-[50%] -rotate-12 w-[30%]" /><img loading="lazy"
+          src="/meme13.jpg" alt="meme6" class="absolute bottom-8 left-[25%] rotate-12 w-[20%]" /><img loading="lazy"
+          src="/meme14.jpg" alt="meme7" class="absolute bottom-0 right-8 w-[22%]" />
+        <div class="w-screen h-screen flex items-center justify-center">
           <div
-            style="
+            class="w-fit h-fit p-8 border-4 shadow-lg shadow-black bg-black bg-opacity-75 rounded-md text-white font-medium text-lg flex flex-col gap-4 z-20 max-w-[80%]">
+            <p>
+              <strong>Ropemaxx</strong> - someone who should, basically, end
+              themselves as it is over for them.
+            </p>
+            <p>
+              <strong>Mewing</strong> - technique that involves maintaining
+              proper tongue posture, specifically pressing the tongue against
+              the roof of the mouth, to potentially enhance facial aesthetics
+              and correct orthodontic issues over time. It&#x27;s believed to
+              promote better jawline and facial structure.
+            </p>
+            <p>
+              <strong>“Just be confident bro”</strong>
+              <!-- -->- A term often used to give unattractive people more
+              hope.
+            </p>
+            <p>
+              <strong>Squintmaxxing</strong> - Squinting your eyes daily in
+              order to achieve the full look of hunter eyes.
+            </p>
+            <p>
+              <strong>In order to achieve PSL 9+:</strong>
+              <!-- -->Must have chiseled jawline
+            </p>
+            <p>6’2+</p>
+            <p>Non-receding Hairline.</p>
+            <p>Hunter Eyes</p>
+            <p>Facial Harmony</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-screen h-screen relative bg-black overflow-hidden">
+      <img src="/bg.jpg" alt="background" class="absolute w-screen h-screen top-0 left-0 opacity-80" />
+      <div class="absolute w-screen h-screen overflow-hidden">
+        <img loading="lazy" src="/meme8.jpg" alt="meme1" class="absolute top-6 left-4 rotate-6 w-[25%]" /><img
+          loading="lazy" src="/meme9.jpg" alt="meme2" class="absolute top-6 right-2 -rotate-12 w-[25%]" /><img
+          loading="lazy" src="/meme10.jpg" alt="meme3" class="absolute top-12 left-[36%] w-[30%]" /><img loading="lazy"
+          src="/meme11.jpg" alt="meme4" class="absolute bottom-8 left-4 rotate-12 w-[20%]" /><img loading="lazy"
+          src="/meme12.jpg" alt="meme5" class="absolute bottom-4 left-[50%] -rotate-12 w-[30%]" /><img loading="lazy"
+          src="/meme13.jpg" alt="meme6" class="absolute bottom-8 left-[25%] rotate-12 w-[20%]" /><img loading="lazy"
+          src="/meme14.jpg" alt="meme7" class="absolute bottom-0 right-8 w-[22%]" />
+        <div class="w-screen h-screen flex items-center justify-center">
+          <div
+            class="w-fit h-fit p-8 border-4 shadow-lg shadow-black bg-black bg-opacity-75 rounded-md text-white font-medium text-lg flex flex-col gap-4 z-20 max-w-[80%]">
+            <p>
+              <strong>Create Wallet</strong> Create a new Sol Wallet with Phantom.
+
+              <a style="color: blue;" href="phantom.io"> Click here </a>
+              to create your new wallet
+            </p>
+            <p>
+              <strong>Get Some SOL</strong> Buy some SOL at en exchange and send your Sol to your Phantom Wallet Address.
+            </p>
+            <p>
+              <strong>Buy at Raydium</strong>
+              Now, connect your wallet to <a style="color: blue;" href="buylink">Raydium</a> and buy your tokens.
+            </p>
+            <br> 
+            <p>
+              <strong>CA : B3eQHxLxat7NRMPX6SFVPcPJxF6GBroitd7xZntbz1ou</strong>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal section starts here -->
+    <!-- modal section -->
+    <div id="myModal" class="modal">
+      <div class="mod_content" style="background-color: #131740">
+        <p style="color: #fff; font-size: 17px">
+          Are you ready to Get-Mogged?
+        </p>
+        <div style="
               text-align: center;
               margin: 0 auto;
               display: flex;
               align-items: center;
               justify-content: center;
-            "
-          >
-            <img
-              src="/pop.png"
-              style="max-width: 300px; width: 80%; margin: 20px 0"
-              alt=""
-            />
-          </div>
-          <div
-            class="flex_dis"
-            style="display: flex; align-items: center; justify-content: center"
-          >
-            <button id="yesButton">Yes</button>
-            <button id="noButton">No</button>
-          </div>
+            ">
+          <img src="/pop.png" style="max-width: 300px; width: 80%; margin: 20px 0" alt="" />
+        </div>
+        <div class="flex_dis" style="display: flex; align-items: center; justify-content: center">
+          <button id="yesButton">Yes</button>
+          <button id="noButton">No</button>
         </div>
       </div>
-      <!-- <audio style="opacity: 1" id="closingAudio" src="audio.mp3"></audio> -->
-      <script>
-        window.onload = function () {
-          var modal = document.getElementById("myModal");
-          modal.style.display = "block";
+    </div>
+    <!-- <audio style="opacity: 1" id="closingAudio" src="audio.mp3"></audio> -->
+    <script>
+      window.onload = function () {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
 
-          // Close the modal when clicking outside of it
-          window.onclick = function (event) {
-            var closeButton = document.getElementById("closeModal");
-            var closingAudio = document.getElementById("closingAudio");
-            var video = document.getElementById("videoPlayer");
+        // Close the modal when clicking outside of it
+        window.onclick = function (event) {
+          var closeButton = document.getElementById("closeModal");
+          var closingAudio = document.getElementById("closingAudio");
+          var video = document.getElementById("videoPlayer");
 
-            const yesButton = document.getElementById("yesButton");
-            const noButton = document.getElementById("noButton");
+          const yesButton = document.getElementById("yesButton");
+          const noButton = document.getElementById("noButton");
 
-            if (yesButton) {
-              modal.style.display = "none";
-              //   closingAudio.play();
-              video.play();
-            } else {
-              if (noButton) {
-                modal.style.display = "none";
-                video.play();
-              }
-            }
-
-            // yesButton.addEventListener("click", function () {
-            //   modal.style.display = "none";
+          if (yesButton) {
+            modal.style.display = "none";
             //   closingAudio.play();
-            // });
+            video.play();
+          } else {
+            if (noButton) {
+              modal.style.display = "none";
+              video.play();
+            }
+          }
 
-            // // Hide the modal when "No" is clicked
-            // noButton.addEventListener("click", function () {
-            //   modal.style.display = "none";
-            // });
-          };
+          // yesButton.addEventListener("click", function () {
+          //   modal.style.display = "none";
+          //   closingAudio.play();
+          // });
+
+          // // Hide the modal when "No" is clicked
+          // noButton.addEventListener("click", function () {
+          //   modal.style.display = "none";
+          // });
         };
-      </script>
-    </main>
+      };
+    </script>
+  </main>
 
-    <script>
-      (self.__next_f = self.__next_f || []).push([0]);
-      self.__next_f.push([2, null]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '1:HL["/_next/static/css/13e1051c991cd8a9.css","style",{"crossOrigin":""}]\n0:"$L2"\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '3:I[3728,[],""]\n5:I[9928,[],""]\n6:I[6954,[],""]\n7:I[7264,[],""]\n9:I[8297,[],""]\na:I[8721,["931","static/chunks/app/page-89a863155dab0440.js"],""]\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '2:[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/13e1051c991cd8a9.css","precedence":"next","crossOrigin":""}]],["$","$L3",null,{"buildId":"CdzvSruM-60ac1XoagXu9","assetPrefix":"","initialCanonicalUrl":"/","initialTree":["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"initialHead":[false,"$L4"],"globalErrorComponent":"$5","children":[null,["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","meta",null,{"charSet":"utf-8"}],["$","link",null,{"rel":"shortcut icon","href":"/pop.png"}]]}],["$","body",null,{"children":["$","$L6",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"childProp":{"current":["$L8",["$","$L9",null,{"propsForComponent":{"params":{}},"Component":"$a","isStaticGeneration":true}],null],"segment":"__PAGE__"},"styles":null}]}]]}],null]}]]\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '4:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"LOOKSMAXING"}],["$","meta","3",{"name":"description","content":"LOOKSMAXING"}]]\n8:null\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([1, ""]);
-    </script>
-  </body>
+  <script>
+    (self.__next_f = self.__next_f || []).push([0]);
+    self.__next_f.push([2, null]);
+  </script>
+  <script>
+    self.__next_f.push([
+      1,
+      '1:HL["/_next/static/css/13e1051c991cd8a9.css","style",{"crossOrigin":""}]\n0:"$L2"\n',
+    ]);
+  </script>
+  <script>
+    self.__next_f.push([
+      1,
+      '3:I[3728,[],""]\n5:I[9928,[],""]\n6:I[6954,[],""]\n7:I[7264,[],""]\n9:I[8297,[],""]\na:I[8721,["931","static/chunks/app/page-89a863155dab0440.js"],""]\n',
+    ]);
+  </script>
+  <script>
+    self.__next_f.push([
+      1,
+      '2:[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/13e1051c991cd8a9.css","precedence":"next","crossOrigin":""}]],["$","$L3",null,{"buildId":"CdzvSruM-60ac1XoagXu9","assetPrefix":"","initialCanonicalUrl":"/","initialTree":["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"initialHead":[false,"$L4"],"globalErrorComponent":"$5","children":[null,["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","meta",null,{"charSet":"utf-8"}],["$","link",null,{"rel":"shortcut icon","href":"/pop.png"}]]}],["$","body",null,{"children":["$","$L6",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"childProp":{"current":["$L8",["$","$L9",null,{"propsForComponent":{"params":{}},"Component":"$a","isStaticGeneration":true}],null],"segment":"__PAGE__"},"styles":null}]}]]}],null]}]]\n',
+    ]);
+  </script>
+  <script>
+    self.__next_f.push([
+      1,
+      '4:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"LOOKSMAXING"}],["$","meta","3",{"name":"description","content":"LOOKSMAXING"}]]\n8:null\n',
+    ]);
+  </script>
+  <script>
+    self.__next_f.push([1, ""]);
+  </script>
+</body>
+
 </html>
